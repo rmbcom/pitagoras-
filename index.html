@@ -12,7 +12,136 @@ body{
 .container{
   max-width:900px;
   margin:auto;
-}
+}<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitágoras Hacker Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="matrix-background"></div>
+
+<div class="container">
+
+```
+<header>
+    <h1>⚡ PITÁGORAS HACKER EDITION ⚡</h1>
+    <p>Modo Automático</p>
+</header>
+
+<canvas
+    id="gridCanvas"
+    width="500"
+    height="500">
+</canvas>
+
+<section class="panel">
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <span>Pregunta</span>
+            <strong id="round">1</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>Nivel</span>
+            <strong id="level">1</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>Aciertos</span>
+            <strong id="score">0</strong>
+        </div>
+
+    </div>
+
+    <div
+        id="question"
+        class="question">
+        Cargando...
+    </div>
+
+    <div
+        id="options"
+        class="options">
+    </div>
+
+    <div
+        id="feedback"
+        class="feedback">
+    </div>
+
+    <div class="buttons">
+
+        <button id="nextBtn">
+            Siguiente
+        </button>
+
+        <button id="rankingBtn">
+            🏆 Ranking Histórico
+        </button>
+
+    </div>
+
+</section>
+```
+
+</div>
+
+<!-- RANKING -->
+
+<div
+    id="rankingModal"
+    class="modal hidden">
+
+```
+<div class="modal-content">
+
+    <h2>🏆 TOP 19 HISTÓRICO</h2>
+
+    <table class="ranking-table">
+
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Jugador</th>
+                <th>Puntos</th>
+                <th>Rendimiento</th>
+                <th>Tiempo</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+
+        <tbody id="historicRanking">
+        </tbody>
+
+    </table>
+
+    <button
+        type="button"
+        onclick="window.closeRanking()">
+        Cerrar
+    </button>
+
+</div>
+```
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+    startAutomaticMode();
+</script>
+
+</body>
+</html>
+
 svg{
   background:white;
   border:2px solid #333;
