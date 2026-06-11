@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitágoras Hacker Edition - Moderador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="matrix-background"></div>
+
+<div class="container">
+
+    <header>
+        <h1>⚡ PITÁGORAS HACKER EDITION ⚡</h1>
+        <p>Modo Moderador</p>
+    </header>
+
+    <section id="setup" class="panel">
+
+        <h2>Registro de participantes</h2>
+
+        <div class="input-row">
+            <input id="playerName" type="text" placeholder="Nombre del participante">
+            <button id="addPlayerBtn" type="button">Añadir</button>
+        </div>
+
+        <ul id="playerList" class="player-list"></ul>
+
+        <div class="buttons">
+            <button id="startGameBtn" type="button">Iniciar partida</button>
+            <button class="rankingBtn" type="button">🏆 Ranking Histórico</button>
+        </div>
+
+    </section>
+
+    <section id="game" class="hidden">
+
+        <h2 id="currentPlayer"></h2>
+
+        <canvas
+            id="gridCanvas"
+            width="500"
+            height="500">
+        </canvas>
+
+        <section class="panel">
+
+            <div id="question" class="question">
+                Cargando...
+            </div>
+
+            <div id="options" class="options"></div>
+
+            <div id="feedback" class="feedback"></div>
+
+            <div class="buttons">
+                <button id="nextBtn" type="button">Siguiente</button>
+            </div>
+
+        </section>
+
+    </section>
+
+    <section id="results" class="panel hidden">
+
+        <h2>🏆 Podio de la partida</h2>
+
+        <div id="podium" class="podium"></div>
+
+        <h2>Clasificación completa</h2>
+
+        <table class="ranking-table">
+
+            <thead>
+                <tr>
+                    <th>Posición</th>
+                    <th>Nombre</th>
+                    <th>Aciertos</th>
+                    <th>Fallos</th>
+                    <th>Puntos</th>
+                    <th>Rendimiento</th>
+                    <th>Tiempo</th>
+                </tr>
+            </thead>
+
+            <tbody id="ranking"></tbody>
+
+        </table>
+
+        <div class="buttons">
+            <button class="rankingBtn" type="button">🏆 Ranking Histórico</button>
+        </div>
+
+    </section>
+
+</div>
+
+<!-- RANKING -->
+
+<div
+    id="rankingModal"
+    class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2>🏆 TOP 19 HISTÓRICO</h2>
+
+        <table class="ranking-table">
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Jugador</th>
+                    <th>Puntos</th>
+                    <th>Rendimiento</th>
+                    <th>Tiempo</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+
+            <tbody id="historicRanking">
+            </tbody>
+
+        </table>
+
+        <button
+            type="button"
+            onclick="window.closeRanking()">
+            Cerrar
+        </button>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+    startModeratorMode();
+</script>
+
+</body>
+</html>
